@@ -5,10 +5,7 @@ function FriendCard(props) {
   return (
     <div className="card">
       <div className="img-container">
-
-        <img alt={props.name} src={props.image}/>
-
-
+        <img onClick={() => props.incrementScore(props.id)} alt={props.name} src={props.image} />
       </div>
       <div className="content">
         <ul>
@@ -23,9 +20,6 @@ function FriendCard(props) {
           </li>
         </ul>
       </div>
-      <span onClick={() => props.incrementScore(props.id)} className="remove">
-          Click Here to Choose This Friend
-      </span>
     </div>
   );
 }

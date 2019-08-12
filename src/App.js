@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import Wrapper from "./components/Wrapper";
+import Jumbotron from "./components/Jumbotron";
+
 import Title from "./components/Title";
 import friends from "./friends.json";
 
@@ -47,7 +49,12 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Title score={this.state.score} topScore={this.state.topScore}>Clicky Game</Title>
+        <Jumbotron>
+          <h1>Welcome to the Memory Game</h1>
+          <h1>Score: {this.state.score}</h1>
+          <h1>Top Score: {this.state.topScore}</h1>
+        </Jumbotron>
+        <Title>Click on an image to increase your score. Try not to click on any image twice or your score will return to 0.</Title>
         {this.state.friends.map(friend => (
           <FriendCard
             incrementScore={this.incrementScore}
